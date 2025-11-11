@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>CoTrans: A Unified Framework for Enhancing Sparse-Agent Collaborative Perception</title>
+  <title>InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information Bottleneck</title>
 <!--   <link rel="icon" type="image/x-icon" href="static/images/favicon_todo.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -60,19 +60,18 @@
                 <span class="author-block">
                   <a href="https://orcid.org/0000-0002-3074-4620" target="_blank">Penglin Dai</a><sup>1,*</sup>,</span>
                 <span class="author-block">
-                    <a href="https://orcid.org/0000-0002-2189-7967" target="_blank">Ke Li</a><sup>1</sup>,</span>
-                <span class="author-block">
                   <a href="https://orcid.org/0000-0002-8278-1765" target="_blank">Wei Li</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="https://orcid.org/0000-0002-8322-8558" target="_blank">Xiao Wu</a><sup>1</sup>,</span>
+                    <a href="https://scholar.google.com.hk/citations?user=ECRF9DMAAAAJ&hl=zh-CN&oi=ao" target="_blank">Bingyi Liu</a><sup>2</sup>,</span>
+
                 <span class="author-block">
-                  <a href="https://scholar.google.com.hk/citations?user=qaUgD50AAAAJ" target="_blank"> Zhaofei Yu</a><sup>2</sup>
-                  
+                  <a href="https://orcid.org/0000-0002-8322-8558" target="_blank">Xiao Wu</a><sup>1</sup>,</span>
+
                   </span>
                     </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Southwest Jiaotong University <br> <sup>2</sup>Peking University <!--<br>Conferance name and year--></span>
+                    <span class="author-block"><sup>1</sup>Southwest Jiaotong University <br> <sup>2</sup>Wuhan University of Technology <br>AAAI 2026</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
                   </div>
 
@@ -144,8 +143,7 @@
         type="video/mp4">
       </video> -->
       <h2 class="subtitle has-text-centered">
-        Our CoTrans addresses the unexplored performance gap between sparse-agent and dense-agent collaborative perception, a critical bottleneck in collaborative autonomous driving. In contrast to previous research that has primarily advanced the transition from single-agent to collaborative paradigms.
-      </h2>
+        From redundant spatial features to essential information: InfoCom's theoretically grounded information purification ensures minimal sufficient information for perception, enabling KB-scale, near-lossless collaborative perception beyond feature manipulation.
     </div>
   </div>
 </section>
@@ -159,7 +157,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Collaborative perception is a powerful paradigm that addresses the limitations of single-agent perception caused by occlusion and distance. However, in practice, sparse-agent collaborative perception (SCP) faces similar vulnerabilities to single-agent perception, leading to significant performance degradation compared to dense-agent collaborative perception (DCP). In this paper, we investigate the negative impact of SCP and propose a unified framework, CoTrans, to bridge the SCP-DCP gap for existing collaborative perception methods. This framework relies on a conceptually simple yet efficient collaboration translation, which simulates the gap in a learnable manner. Furthermore, in CoTrans, a drop-agent strategy is introduced to support the learning process without any communication burden, and a lightweight injection network equipped with localization and injection capabilities is proposed to fuse collaboration translation and SCP features. To the best of our knowledge, this is the first unified framework designed to enhance SCP. Extensive experiments across five large-scale collaborative perception datasets demonstrate that CoTrans consistently enhances existing collaborative systems in SCP scenarios, while introducing only 1ms inference latency. In particular, it achieves a 6.6\% AP gain for AttFuse on the real-world DAIR-V2X dataset under sparse-agent conditions.
+            Precise environmental perception is critical for the reliability of autonomous driving systems. While collaborative perception mitigates the limitations of single-agent perception through information sharing, it encounters a fundamental communication-performance trade-off. Existing communication-efficient approaches typically assume MB-level data transmission per collaboration, which may fail due to practical network constraints. To address these issues, we propose InfoCom, an information-aware framework establishing the pioneering theoretical foundation for communication-efficient collaborative perception via extended Information Bottleneck principles. Departing from mainstream feature manipulation, InfoCom introduces a novel information purification paradigm that theoretically optimizes the extraction of minimal sufficient task-critical information under Information Bottleneck constraints. Its core innovations include: i) An Information-Aware Encoding condensing features into minimal messages while preserving perception-relevant information; ii) A Sparse Mask Generation identifying spatial cues with negligible communication cost; and iii) A Multi-Scale Decoding that progressively recovers perceptual information through mask-guided mechanisms rather than simple feature reconstruction. Comprehensive experiments across multiple datasets demonstrate that InfoCom achieves near-lossless perception while reducing communication overhead from megabyte to kilobyte-scale, representing 440-fold and 90-fold reductions per agent compared to Where2comm and ERMVP, respectively.
           </p>
         </div>
       </div>
@@ -179,9 +177,10 @@
         <div class="content has-text-justified">
           <p>
             <ul>
-              <li>To the best of our knowledge, this is the first work to systematically address the performance gap between sparse-agent collaborative perception (SCP) and dense-agent collaborative perception (DCP). To effectively model this gap, we propose collaboration translation, a non-generative mechanism that preserves original perceptual information while maintaining sufficient flexibility.</li>
-              <li>Hinged on the collaboration translation, we present a plug-and-play framework called CoTrans for enhancing SCP. Its core components also consist of a drop-agent strategy and a lightweight injection network. These components form a virtuous circle in which each component facilitates the others.</li>
-              <li>We conduct extensive experiments on five large-scale collaborative perception datasets and six intermediate collaboration methods to validate the effectiveness of our proposed CoTrans. The results demonstrate that CoTrans maintains DCP performance while significantly improving SCP accuracy.</li>
+              
+              <li>We propose InfoCom, the first communication-efficient collaborative perception framework supported by theoretical analysis. It resolves the fundamental tension between extreme KB-scale compression and perception fidelity through a novel information purification paradigm.</li>
+              <li>InfoCom achieves unprecedented bandwidth efficiency (440×/90× reduction vs. state-of-the-art) while maintaining near-lossless perception accuracy through three co-designed innovations: Information-Aware Encoding, Sparse Mask Generation, and Multi-Scale Decoding.</li>
+              <li>InfoCom demonstrates practical scalability via plug-and-play modularity, which seamlessly integrates with existing collaborative models under real-world network constraints. This capability is validated across OPV2V, V2XSet, and DAIR-V2X datasets.</li>
             </ul>
           </p>
         </div>
@@ -202,7 +201,7 @@
         <div class="content has-text-justified">
           <img src="static/images/fig3_framework_00.png" width="1445" height="600"/>
           <p>
-            CoTrans is a novel general extension for enhancing sparse-agent collaborative perception (SCP). Core innovations include: (1) A global collaboration translation that explicitly models disparities between SCP and dense-agent collaborative perception (DCP); (2) A lightweight injection network that adaptively personalizes and integrates the translation to refine SCP features; and (3) A drop-agent strategy enabling training of collaboration translation by generating simulated SCP scenarios from real DCP data without communication overhead.
+            InfoCom is a communication-efficient collaborative perception framework based on a novel information purification paradigm, consisting of three core modules: (1) Information-Aware Encoding condenses task-critical information from high-dimensional intermediate features into minimal sufficient representations by extending the Information Bottleneck principle; (2) Sparse Mask Generation identifies essential spatial cues with minimal communication overhead; (3) Multi-Scale Decoding progressively recovers perceptual information through mask-guided reconstruction.
           </p>
         </div>
       </div>
