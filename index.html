@@ -215,20 +215,17 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative  Results</h2>
+        <h2 class="title is-3">Main Results</h2>
         <div class="content has-text-justified">
-          <img src="static/images/fig7_visualization_all_models_00.jpg" width="3675" height="1034"/>
+          <img src="static/images/Result1.jpg" width="3675" height="1034"/>
           <p>
-            3D object detection visualization across collaborative perception models. Green and red boxes are ground-truth and detection, respectively. Among the six models evaluated, CoTrans significantly enhances detection precision.
+            Experimental results reveal three superiorities inherent to InfoCom.
+i) \textit{Exceptional communication efficiency}: InfoCom requires only kilobyte-level communication volume, comparable to Late Collaboration but significantly lower than other feature-based solutions. Specifically, its bandwidth consumption is over 400 times lower than Where2comm, only 1\% of that of ERMVP, and over 4000 times lower than Standard Collaboration.
+ii) \textit{Superior perception performance}: InfoCom maintains perception performance on par with the bandwidth-intensive Standard Collaboration despite minimal communication overhead, while significantly outperforms Where2comm. Moreover, ERMVP exhibits the smallest performance gap relative to InfoCom.
+iii) \textit{Optimal communication-performance trade-off}: InfoCom demonstrates state-of-the-art efficiency in performance gain per unit bandwidth. For example, on the OPV2V dataset, InfoCom achieves $1.8 \times 10^{-2}$ average performance gain per kilobyte, substantially exceeding Where2comm ($3.2 \times10^{-5}$) and ERMVP ($1.7 \times 10^{-4}$).
           </p>
         </div>
 
-        <div class="content has-text-justified">
-          <img src="static/images/fig8_visualization_all_scenario_00.jpg" width="100%" height="100%"/>
-          <p>
-            3D object detection visualization in challenging driving scenarios. Green and red boxes denote ground-truth and detection, respectively. CoTrans achieves superior performance across diverse environments compared to naive collaboration.
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -239,10 +236,11 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{Wei2025CoTrans,
-      author    = {Quanmin Wei, Penglin Dai, Ke Li, Wei Li, Xiao Wu, Zhaofei Yu},
-      title     = {CoTrans: A Unified Framework for Enhancing Sparse-Agent Collaborative Perception},
-      year      = {2025}
+      <pre><code>@inproceedings{Wei2026infocom,
+      author    = {Quanmin Wei, Penglin Dai, Wei Li, Bingyi Liu, Xiao Wu},
+      title     = {InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information Bottleneck},
+      booktitle={AAAI Conference on Artificial Intelligence (AAAI)},
+      year      = {2026}
   }</code></pre>
     </div>
 </section>
